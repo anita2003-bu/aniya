@@ -1,0 +1,28 @@
+
+
+data = [
+    ["Telegram", "100 млн", "70%"],
+    ["Instagram", "150 млн", "80%"]
+]
+
+# Заголовки для стовпців
+column_labels = ["Платформа", "Кількість користувачів", "Активність (%)"]
+
+# Створення фігури та осей
+fig, ax = plt.subplots()
+
+# Приховати осі
+ax.xaxis.set_visible(False) 
+ax.yaxis.set_visible(False)
+ax.set_frame_on(False)
+
+# Створення таблиці
+table = ax.table(cellText=data, colLabels=column_labels, cellLoc='center', loc='center')
+
+# Налаштування стилю таблиці
+table.auto_set_font_size(False)
+table.set_fontsize(12)
+table.scale(1.2, 1.2)
+
+# Відображення таблиці
+plt.show()
